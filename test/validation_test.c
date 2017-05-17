@@ -1,8 +1,13 @@
-// #include "deposit.h"
-// #include "ctest.h"
+#include "func.h"
+#include "ctest.h"
 
-// CTEST(validoTest1,First){
-// 	const int result = getInput(0,0);
-// 	const int expected = 1;
-// 	ASSERT_EQUAL(expected,result);
-// }
+CTEST(Getinput,input0matches0correct0){
+	const int result = getinput(0,0,0);
+	const int expected = 1;
+	ASSERT_EQUAL(expected,result);
+}
+CTEST(Getinput,input2matches0correct1){
+	const int result = getinput(2,0,1);
+	const int expected = 0;
+	ASSERT_EQUAL(expected,result);
+}
