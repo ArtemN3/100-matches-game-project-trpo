@@ -3,6 +3,13 @@
 #include <stdbool.h>
 #include <progect.h>
 
+int vvod(int input)
+{
+    printf("Ваш ход. Введите количество спичек от 1 до 10: ");
+    scanf("%d", &input);
+    return input;
+}
+
 int getinput(int input,int matches,int correct)
 {
     if ((input > 0) && (input <= 10) && (input <= matches)){
@@ -16,11 +23,10 @@ int getinput(int input,int matches,int correct)
 int player_turn(int input,int matches,bool *isWon)
 { 
 int correct;
-do  {
-    printf("Ваш ход. Введите количество спичек от 1 до 10: ");
-    scanf("%d", &input);
-    correct = getinput(input, matches, correct); 
-} while (!correct);
+    do  {
+    	input = vvod(input);
+    	correct = getinput(input, matches, correct); 
+    } while (!correct);
 matches -= input;
     if (matches == 0) {
         *isWon = true;
