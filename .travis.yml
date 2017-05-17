@@ -1,4 +1,5 @@
 language: c
-script: 
+compiler: gcc
+script:
 - make
 - ./bin/testik
