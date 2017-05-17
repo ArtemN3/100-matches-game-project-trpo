@@ -23,11 +23,10 @@ int player_turn(int input,int matches)
 
 int Comp_turn(int input,int matches)
 {
-input = rand()%11; 
-    if (input > matches)
-        return -1;
-    else {
+    if (input <= matches){
         matches -= input;
         return matches;
+    } else {
+        return -1;  
     }
 }
