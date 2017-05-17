@@ -26,7 +26,11 @@ $(DUR)/$(EXECUTABLE): $(DIR)/main.o $(DIR)/progect.o
 	$(CC) $(DIR)/main.o $(DIR)/progect.o -o $(DUR)/$(EXECUTABLE) 
 
 TEST: $(DUR)/$(EXECUTABLE_TEST)
-	$(DIT)/main.o: $(DAT)/main.c
+$(DIT)/func.o: $(DAT)/func.c
+	@if [ ! -d $(DIT) ] ; then echo "creating $(DIT)" ; mkdir build; mkdir build/test; fi
+	$(CC) $(CFLAGS) -c $(DAT)/func.c -o $(DIT)/func.o
+
+$(DIT)/main.o: $(DAT)/main.c
 	@if [ ! -d $(DIT) ] ; then echo "creating $(DIT)" ; mkdir build; mkdir build/test; fi
 	$(CC) $(CFLAGS) -c $(DAT)/main.c -o $(DIT)/main.o
 
@@ -38,12 +42,9 @@ $(DIT)/validation_test.o: $(DAT)/validation_test.c
 	@if [ ! -d $(DIT) ] ; then echo "creating $(DIT)" ; mkdir build; mkdir build/test; fi
 	$(CC) $(CFLAGS) -c $(DAT)/validation_test.c -o $(DIT)/validation_test.o
 
-$(DUR)/$(EXECUTABLE_TEST): $(DIT)/main.o $(DIT)/progect_test.o $(DIT)/validation_test.o $(DAR)/progect.o
+$(DUR)/$(EXECUTABLE_TEST): $(DIT)/main.o $(DIT)/progect_test.o $(DIT)/validation_test.o $(DIT)/func.o
 	@if [ ! -d $(DUR) ] ; then echo "creating $(DUR)" ; mkdir bin; fi
-	$(CC) $(DIT)/main.o $(DIT)/progect_test.o $(DIT)/validation_test.o $(DIR)/progect.o -o $(DUT)/$(EXECUTABLE_TEST)
-
-	./$(DUR)/$(EXECUTABLE_TEST)
-
+	$(CC) $(DIT)/main.o $(DIT)/progect_test.o $(DIT)/validation_test.o $(DIT)/func.o -o $(DUT)/$(EXECUTABLE_TEST)
 
 .Phony: clean
 clean:
