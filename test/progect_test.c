@@ -16,8 +16,8 @@ CTEST(CompTurn,15inputs5matches){
 	const int expected = -1;
 	ASSERT_EQUAL(expected, result);
 }
-CTEST(CompTurn,5inputs5matches){
-	const int result = Comp_turn(5,5);
-	const int expected = 0;
+CTEST(CompTurn,5inputs6matches){
+	const int result = Comp_turn(5,6);
+	const int expected = 1;
 	ASSERT_EQUAL(expected, result);
 }
