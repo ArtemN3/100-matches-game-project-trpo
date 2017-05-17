@@ -28,4 +28,5 @@ scanf("%i", &x);
     } 
     if (isWon) printf("\nПобедил игрок!\n"); 
     else printf("\nПобедил компьютер!\n");
+return 0;
 }
