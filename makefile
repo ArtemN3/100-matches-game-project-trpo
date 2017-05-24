@@ -38,9 +38,9 @@ $(DIT)/validation_test.o: $(DAT)/validation_test.c
 	@if [ ! -d $(DIT) ] ; then echo "creating $(DIT)" ; mkdir build; mkdir build/test; fi
 	$(CC) $(CFLAGS) -c $(DAT)/validation_test.c -o $(DIT)/validation_test.o
 
-$(DUR)/$(EXECUTABLE_TEST): $(DIT)/main.o $(DIT)/progect_test.o $(DIT)/validation_test.o $(DIT)/progect.o
+$(DUR)/$(EXECUTABLE_TEST): $(DIT)/main.o $(DIT)/progect_test.o $(DIT)/validation_test.o $(DIR)/progect.o
 	@if [ ! -d $(DUR) ] ; then echo "creating $(DUR)" ; mkdir bin; fi
-	$(CC) $(DIT)/main.o $(DIT)/progect_test.o $(DIT)/validation_test.o $(DIT)/progect.o -o $(DUT)/$(EXECUTABLE_TEST)
+	$(CC) $(DIT)/main.o $(DIT)/progect_test.o $(DIT)/validation_test.o $(DIR)/progect.o -o $(DUT)/$(EXECUTABLE_TEST)
 
 .Phony: clean
 clean:
