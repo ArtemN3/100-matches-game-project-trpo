@@ -1,4 +1,4 @@
-#include "func.h"
+#include "progect.h"
 #include "ctest.h"
 
 CTEST(Getinput,input0matches0correct0){
