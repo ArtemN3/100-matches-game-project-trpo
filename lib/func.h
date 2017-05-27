@@ -1,9 +1,6 @@
-#ifndef PROGECT_H
-#define PROGECT_H
-
-int vvod();
+#ifndef FUNC_H
+#define FUNC_H
 int getinput();
 int player_turn();
 int Comp_turn();
-
 #endif

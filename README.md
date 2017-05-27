@@ -1,1 +1,1 @@
-proect
+[![Build Status](https://travis-ci.org/ArtemN3/100-matches-game-project-trpo.svg?branch=master)](https://travis-ci.org/ArtemN3/100-matches-game-project-trpo)
