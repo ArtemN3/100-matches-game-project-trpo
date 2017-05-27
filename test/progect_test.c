@@ -1,4 +1,4 @@
-#include "func.h"
+#include "progect.h"
 #include "ctest.h"
 
 CTEST(PlayerTurn,3inputs90matches){
